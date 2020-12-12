@@ -113,6 +113,13 @@ set $menu bemenu-run -n
 
     # move focus to the parent container
     bindsym $mod+a focus parent
+
+
+
+bindsym $mod+x move workspace to output right
+bindsym $mod+Shift+x move worspace to output left
+
+
 #
 # Scratchpad:
 #
@@ -156,6 +163,7 @@ bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86AudioMute exec $HOME/scripts/volume.sh 0
 bindsym Print exec $HOME/scripts/scrot.sh
+bindsym Print+Shift exec $HOME/scripts/select-scrot.sh
 bindsym $mod+Mod1+l exec $HOME/scripts/wayland-lock.sh
 
 font pango:Source Code Pro for Powerline 9
@@ -164,9 +172,13 @@ default_border none
 
 output eDP-1 background "/home/nightmared/pictures/wall/download3.jpg" fill
 output eDP-1 position 0 0
-output DP-1 mode 2560x1440
+output DP-1 mode 2560x1440@60Hz
 output DP-1 background "/home/nightmared/pictures/wall/download3.jpg" fill
 output DP-1 position 1920 0
+output DP-2 mode 2560x1440@75Hz
+output DP-2 background "/home/nightmared/pictures/wall/download3.jpg" fill
+output DP-2 position 1920 0
+
 
 
 input * xkb_layout "fr"
@@ -177,10 +189,12 @@ input * {
     accel_profile adaptive
 }
 
-exec pulseaudio --start
+#exec pulseaudio --start
 exec dunst
 exec mpd
 exec nm-applet --indicator
+exec blueman-applet
 exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-exec redshift
+#exec redshift
+exec $HOME/scripts/set-wayland-display.sh
 exec sleep 2 && waybar

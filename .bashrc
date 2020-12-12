@@ -1,5 +1,6 @@
 # .bashrc
 
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -8,39 +9,38 @@ export HISTSIZE=25000
 export HISTCONTROL=ignoreboth
 
 export GOPATH="$HOME/dev/go"
+export PATH="$HOME/local/bin:$PATH"
+export XDG_DATA_DIRS="/home/nightmared/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
 
-PS1='\u@\h:\W\$ '
+#PS1='\u@\h:\W\$ '
 
-export PATH="$HOME/.cabal/bin:$HOME/.local/bin:$HOME/bin:$HOME/prog/bin:$HOME/.cargo/bin:$PATH:/opt/MATLAB/R2018b/bin"
-export WLR_DRM_DEVICES="/dev/dri/card0"
+#export PATH="$HOME/.cabal/bin:$HOME/.local/bin:$HOME/bin:$HOME/prog/bin:$HOME/.cargo/bin:$PATH:/opt/MATLAB/R2018b/bin"
+#export WLR_DRM_DEVICES="/dev/dri/card0"
 #export XDG_DATA_DIRS="/usr/share:/usr/local/share"
-export PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:$HOME/prog/lib/pkgconfig:$HOME/prog/lib64/pkgconfig"
-export MANPATH="/usr/share/man:/usr/local/share/man:/$HOME/prog/share/man"
+#export PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:$HOME/prog/lib/pkgconfig:$HOME/prog/lib64/pkgconfig"
+#export MANPATH="/usr/share/man:/usr/local/share/man:/$HOME/prog/share/man"
 
 #export DISPLAY=":0"
 
-export XKB_DEFAULT_LAYOUT="fr"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_RUNTIME_DIR="$HOME/.config"
-export XDG_SESSION_TYPE=wayland
-#mkdir -p $XDG_RUNTIME_DIR
-export GDK_BACKEND=wayland
-#export WAYLAND_DISPLAY=wayland-0
-#export XDG_CURRENT_DESKTOP=Unity
-export XDG_CURRENT_DESKTOP=sway
-export QT_QPA_PLATFORM=wayland
-export BEMENU_BACKEND=wayland
-export SDL_VIDEODRIVER=wayland
-export CLUTTER_BACKEND=wayland
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export WINIT_UNIX_BACKEND=wayland
-export MOZ_ENABLE_WAYLAND=1
-export MOZ_DBUS_REMOTE=1
-#export JAVA_HOME="$HOME/jdk-12.0.1"
-export _JAVA_AWT_WM_NONREPARENTING=1
-export NO_AT_BRIDGE=1
-export QT_ACCESSIBILITY=0
+#export XKB_DEFAULT_LAYOUT="fr"
+#export XDG_CACHE_HOME="$HOME/.cache"
+#export XDG_CONFIG_HOME="$HOME/.config"
+#export XDG_RUNTIME_DIR="$HOME/.config"
+#export XDG_SESSION_TYPE=wayland
+#export GDK_BACKEND=wayland
+#export XDG_CURRENT_DESKTOP=sway
+#export QT_QPA_PLATFORM=wayland
+#export BEMENU_BACKEND=wayland
+#export SDL_VIDEODRIVER=wayland
+#export CLUTTER_BACKEND=wayland
+#export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+#export WINIT_UNIX_BACKEND=wayland
+#export MOZ_ENABLE_WAYLAND=1
+#export _JAVA_AWT_WM_NONREPARENTING=1
+#export MOZ_DBUS_REMOTE=1
+##export JAVA_HOME="$HOME/jdk-12.0.1"
+#export NO_AT_BRIDGE=1
+#export QT_ACCESSIBILITY=0
 
 alias mirage="ssh inpt nc mirage 2222"
 alias irc="ssh -t turing 'su irc -c \"tmux a\"'"
@@ -62,8 +62,8 @@ alias muslrust="docker run -v cargo-cache:/root/.cargo/registry -v $PWD:/volume 
 #[[ -s "/home/nightmared/dev/n7/gls/TPtest/sdkman/bin/sdkman-init.sh" ]] && source "/home/nightmared/dev/n7/gls/TPtest/sdkman/bin/sdkman-init.sh"
 alias discord="env -i DISPLAY=:0 XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR flatpak run com.discordapp.Discord &"
 
-export PATH="$HOME/.local/bin:$HOME/local/bin:$PATH"
-#export PATH="/home/nightmared/.pyenv/bin:$PATH"
-export GSETTINGS_SCHEMA_DIR="$HOME/local/share/glib-2.0/schemas"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
+#export PATH="$HOME/fuchsia/.jiri_root/bin:$HOME/.local/bin:$HOME/local/bin:$PATH"
+#alias zoom="DISPLAY=:0 XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR LD_LIBRARY_PATH=/var/lib/flatpak/app/us.zoom.Zoom/x86_64/stable/active/files/extra/zoom QT_QPA_PLATFORM=xcb /var/lib/flatpak/app/us.zoom.Zoom/x86_64/stable/active/files/extra/zoom/zoom"
+alias zoom="/var/lib/flatpak/app/us.zoom.Zoom/x86_64/stable/active/files/extra/zoom/zoom"
+
+export PS1="\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
