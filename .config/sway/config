@@ -170,13 +170,13 @@ font pango:Source Code Pro for Powerline 9
 
 default_border none
 
-output eDP-1 background "/home/nightmared/pictures/wall/download3.jpg" fill
+output eDP-1 background "/home/nightmared/pictures/wall/download.jpg" fill
 output eDP-1 position 0 0
 output DP-1 mode 2560x1440@60Hz
-output DP-1 background "/home/nightmared/pictures/wall/download3.jpg" fill
+output DP-1 background "/home/nightmared/pictures/wall/download.jpg" fill
 output DP-1 position 1920 0
 output DP-2 mode 2560x1440@75Hz
-output DP-2 background "/home/nightmared/pictures/wall/download3.jpg" fill
+output DP-2 background "/home/nightmared/pictures/wall/download.jpg" fill
 output DP-2 position 1920 0
 
 
